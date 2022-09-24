@@ -7,7 +7,7 @@ To download and run the repository, follow below steps.
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/harshanajayarathna/fergus-rest-api
+$ git clone https://github.com/harshanajayarathna/fergus
 
 # Go into the repository
 $ cd fergus-rest-api

@@ -11,10 +11,8 @@ class Client extends Model
 
     protected $fillable = ['first_name', 'last_name', 'email', 'phone'];
 
-public function jobs()
-{
-    return $this->hasMany(Job::class);
-}
-
-
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

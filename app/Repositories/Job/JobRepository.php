@@ -8,7 +8,12 @@ use App\Models\Job;
 
 class JobRepository implements JobInterface
 {
-
+    /**
+     * This returns all the jobs with pagination
+     *
+     * @param [type] $request
+     * @return void
+     */
     public function getAll($request)
     {
         $filterColumns = ['statuses.code', 'statuses.name', 'clients.first_name', 'clients.last_name', 'clients.email', 'clients.phone', 'jobs.number', 'jobs.description'];
@@ -23,24 +28,28 @@ class JobRepository implements JobInterface
             })
             ->when($request->has('sort_by'), function ($query) use ($request) {
                 $query->orderBy($request->sort_by, $request->order_by);
-                
-            })
-            //->orderBy('jobs.number', 'desc')
-            ->paginate(5);
+            })->paginate(5);
     }
 
-    public function get($id)
+    /**
+     * This returns a job
+     *
+     * @param integer $id
+     * @return void
+     */
+    public function get(int $id)
     {
         return Job::with(['Notes'])->Where('jobs.id', '=', $id)->get();
     }
+
     /**
-     * Undocumented function
+     * This update the job status
      *
-     * @param [type] $id
-     * @param [type] $data
+     * @param array $data
+     * @param integer $id
      * @return void
      */
-    public function update($data, $id)
+    public function update(array $data, int $id)
     {
         Job::whereId($id)->update($data);
         return Job::find($id);

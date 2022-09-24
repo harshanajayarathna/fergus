@@ -10,16 +10,7 @@ use App\Http\Requests\Note\UpdateRequest;
 use App\Repositories\Note\NoteRepository;
 
 class NoteController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    }
-
+{    
     /**
      * Store a newly created resource in storage.
      *
@@ -31,7 +22,6 @@ class NoteController extends Controller
         $NoteRepository = new NoteRepository();
         return response()->json($NoteRepository->store($request->safe()->only(['job_id', 'subject', 'description'])));
     }
-
     
     /**
      * Update the specified resource in storage.
@@ -46,6 +36,5 @@ class NoteController extends Controller
         
         return response()->json($NoteRepository->update($request->safe()->only(['job_id', 'subject', 'description']), $id));
     }
-
     
 }

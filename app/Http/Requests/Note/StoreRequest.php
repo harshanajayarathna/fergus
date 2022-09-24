@@ -27,8 +27,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'job_id' => 'required|exists:jobs,id',
-            'subject'=> 'required|string|max:250',
-            'description'=> 'required'
+            'subject' => 'required|string|max:250',
+            'description' => 'required'
         ];
     }
 
@@ -40,6 +40,4 @@ class StoreRequest extends FormRequest
             'errors'      => $validator->errors()
         ], 400));
     }
-
-
 }

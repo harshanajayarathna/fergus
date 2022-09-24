@@ -14,7 +14,7 @@ $ cd fergus-rest-api
 
 # create a database in mysql 
 
-# change .env file database credentials
+# rename .env.example file to .env file and change the database credentials
 
 # start Laravel's local development server 
 $ php artisan serve
@@ -46,11 +46,11 @@ eg: GET http://127.0.0.1:8000/api/v1/jobs/{id}
 With this endpoint, you can view a job. For this you need to make a PUT request with status_id (integer).
 eg: PUT http://127.0.0.1:8000/api/v1/jobs/{id}
 
-##  Add a note to job
+###  Add a note to job
 via below endpoint, you can create a new note for a job. For this you need to create a POST request with job_id (integer), subject (string), description (text)  
 eg: POST http://127.0.0.1:8000/api/v1/notes 
 
-##  update a note to job
+###  update a note to job
 via below endpoint, you can create update note for a job. For this you need to create a PUT request with job_id (integer), subject (string), description (text)  
 eg: POST http://127.0.0.1:8000/api/v1/notes/{id} 
 

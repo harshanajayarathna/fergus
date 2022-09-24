@@ -8,30 +8,20 @@ use App\Models\note;
 
 class NoteRepository implements NoteInterface
 {
-
-    public function store($data)
+    /**
+     * This function save the note in database
+     *
+     * @param [type] $data
+     * @return void
+     */
+    public function store(array $data)
     {
-        
-        // $request->safe()->only(['job_id', 'subject', 'description']);
-        /*$Note = new Note();
-
-        $Note->job_id = $request->job_id;
-        $Note->subject = $request->subject;
-        $Note->description = $request->description;
-        $Note->created_at = now();
-
-        $Note->save();
-        return $Note; */
-        // $data['created_at'] = now();
-
-        // return $data;
         return Note::create($data);
-
     }
 
-    
+
     /**
-     * update the note
+     * This function save the note in database
      *
      * @param [type] $data
      * @param [type] $id

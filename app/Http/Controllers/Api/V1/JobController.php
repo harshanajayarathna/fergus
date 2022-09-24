@@ -26,8 +26,6 @@ class JobController extends Controller
         return JobResource::collection($JobRepository->getAll($request));
     }
 
-
-
     /**
      * Display the specified resource.
      *

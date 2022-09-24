@@ -10,7 +10,7 @@ To download and run the repository, follow below steps.
 $ git clone https://github.com/harshanajayarathna/fergus
 
 # Go into the repository
-$ cd fergus-rest-api
+$ cd fergus
 
 # create a database in mysql 
 
